@@ -1,33 +1,32 @@
-var todos= []
+var todos= [];
+var command = $("input[type='text']").val();
+printOut("Welcome to my todo-list app! Type help, if you don't know commands.");
 
 if(event.which === 13){
   logCommand();
-}
-  
-while(command !== "close"){
-  
   if(command === "list"){
     listTodos();
- }
+  }
 
   else if(command === "new"){
     addTodo();
- }
+  }
   
   else if(command === "delete"){
 	deleteTodo();
- }
+  }
   else if(command === "help"){
     viewCommands();
- }
+  }
+  else if(command === "close"){
+	printOut("Thank you, for using my app!");
+	// Here I want to stop the whole script...
+  }
   else{
 	printOut("Invalid command. If you don't know commands, type help.", "failure");
   }
-  
-  printOut("Type command!");
-} 
-
-// Here I want to stop the script...
+  printOut("Type command."); 
+}
 
 function listTodos(){
   if(todos.length !== 0){
