@@ -1,7 +1,7 @@
 var todos= []
 
 if(event.which === 13){
-   logCommand();
+  logCommand();
 }
   
 while(command !== "close"){
@@ -23,7 +23,11 @@ while(command !== "close"){
   else{
 	printOut("Invalid command. If you don't know commands, type help.", "failure");
   }
+  
+  printOut("Type command!");
 } 
+
+// Here I want to stop the script...
 
 function listTodos(){
   if(todos.length !== 0){
@@ -50,10 +54,10 @@ function deleteTodo(){
 }
 
 function viewCommands(){
-	printOut("Here's a full list of commands.");
-	printOut("new- adds new item to the list.");
-	printOut("list- views list of things to do.");
-	printOut("delete- deletes item from the list.");
-	printOut("help- shows list of commands.");
-	printOut("close- closes the application");
+	alert("Here's a full list of commands.");
+	alert("new- adds new item to the list.");
+	alert("list- views list of things to do.");
+	alert("delete- deletes item from the list.");
+	alert("help- shows list of commands.");
+	alert("close- closes the application");
 }
