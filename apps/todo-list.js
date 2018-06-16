@@ -2,8 +2,10 @@ var todos= [];
 var command = $("input[type='text']").val();
 printOut("Welcome to my todo-list app! Type help, if you don't know commands.");
 
-if(event.which === 13){
+$("input[type='text']").keypress(function(event){
+ if(event.which === 13){
   logCommand();
+  
   if(command === "list"){
     listTodos();
   }
@@ -26,6 +28,7 @@ if(event.which === 13){
 	printOut("Invalid command. If you don't know commands, type help.", "failure");
   }
   printOut("Type command."); 
+}	
 }
 
 function listTodos(){
@@ -53,10 +56,10 @@ function deleteTodo(){
 }
 
 function viewCommands(){
-	alert("Here's a full list of commands.");
-	alert("new- adds new item to the list.");
-	alert("list- views list of things to do.");
-	alert("delete- deletes item from the list.");
-	alert("help- shows list of commands.");
-	alert("close- closes the application");
+	printOut("Here's a full list of commands.");
+	printOut("new- adds new item to the list.");
+	printOut("list- views list of things to do.");
+	printOut("delete- deletes item from the list.");
+	printOut("help- shows list of commands.");
+	printOut("close- closes the application");
 }
