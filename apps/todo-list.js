@@ -12,20 +12,24 @@ printOut("Welcome to my todo-list app! If you don't know commands, type help.")
 input.keypress(function(event){
  if(event.which === 13){
   
-  if(command === "list" && stopExec === false && canShowItems == true){
+  if(command === "list" && stopExec === false &&){
      listTodos();
+	 canShowItems = false
   }
 
-  else if(command === "new" && stopExec === false && canAddItems == true){
+  else if(command === "new" && stopExec === false &&){
      addTodo();
+	 canAddItems = false
   }
   
-  else if(command === "delete" && stopExec === false && canRemoveItems == true){
+  else if(command === "delete" && stopExec === false &&){
 	 deleteTodo();
+	 canRemoveItems = false
   }
   
-  else if(command === "help" && stopExec === false && canShowCommands ==  true){
+  else if(command === "help" && stopExec === false &&){
      viewCommands();
+	 canShowCommands = true
   }
  
   else if(command === "close" && stopExec === false){
@@ -56,8 +60,7 @@ function addTodo(){
      if(event.which === 13 && canAddItems === true){
       var newTodo = command
 	  todos.push(" " + newTodo);
-	  printOut("Item added successfully");
-      canAddItems = false	  
+	  printOut("Item added successfully");	  
 	}
   })
 }
