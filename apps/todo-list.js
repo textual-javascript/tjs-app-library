@@ -38,13 +38,13 @@ function listTodos(){
 }
 
 function addTodo(){
-	var newTodo= prompt("Type thing you want to add.");
+	var newTodo= printOut("Type thing you want to add.");
 	todos.push(" " + newTodo);
 	printOut("Item added successfully");
 }
 
 function deleteTodo(){
-	var index= prompt("What item do you want to remove? (Type its index)");
+	var index= printOut("What item do you want to remove? (Type its index)");
 	todos.splice(index, 1)
 	printOut("Item removed successfully");
 }
