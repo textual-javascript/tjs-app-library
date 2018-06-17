@@ -9,6 +9,7 @@ printOut("Welcome to my todo-list app! If you don't know commands, type help.")
 
 input.keypress(function(event){
  if(event.which === 13){
+  
   if(command === "list"){
      listTodos();
   }
@@ -20,10 +21,15 @@ input.keypress(function(event){
   else if(command === "delete"){
 	 deleteTodo();
   }
+  
   else if(command === "help"){
      viewCommands();
-  }	 
- }
+  }
+ 
+  else if(command === "close"){
+     process.exit(0);
+  }
+}
 });
 
 function listTodos(){
