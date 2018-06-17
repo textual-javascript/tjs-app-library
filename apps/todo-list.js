@@ -38,15 +38,22 @@ function listTodos(){
 }
 
 function addTodo(){
-	var newTodo= printOut("Type thing you want to add.");
-	todos.push(" " + newTodo);
-	printOut("Item added successfully");
+    printOut("Type thing you want to add.");
+	input.keypress(function(event){
+    if(event.which === 13){
+      var newTodo = command
+	  todos.push(" " + newTodo);
+	  printOut("Item added successfully");	  
+	}
 }
 
 function deleteTodo(){
-	var index= printOut("What item do you want to remove? (Type its index)");
-	todos.splice(index, 1)
-	printOut("Item removed successfully");
+	printOut("What item do you want to remove? (Type its index)");
+	if(event.which === 13){
+      var index = command
+	  todos.splice(index, 1)
+	  printOut("Item removed successfully");
+	}
 }
 
 function viewCommands(){
