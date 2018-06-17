@@ -4,9 +4,9 @@ printOut("Welcome to my todo-list app! Type help, if you don't know commands.");
 
 $("input[type='text']").keypress(function(event){
  if(event.which === 13){
-  logCommand();
-  
-  if(command === "list"){
+    logCommand();
+	
+	if(command === "list"){
     listTodos();
   }
 
@@ -28,7 +28,8 @@ $("input[type='text']").keypress(function(event){
 	printOut("Invalid command. If you don't know commands, type help.", "failure");
   }
   printOut("Type command."); 
-}	
+ 
+ }	
 }
 
 function listTodos(){
