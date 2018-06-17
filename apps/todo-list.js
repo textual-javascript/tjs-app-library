@@ -14,7 +14,6 @@ input.keypress(function(event){
   
   if(command === "list" && stopExec === false){
      listTodos();
-	 canShowItems = false
   }
 
   else if(command === "new" && stopExec === false){
@@ -34,7 +33,7 @@ input.keypress(function(event){
   else if(command === "close" && stopExec === false){
 	 closeApp(); 
   }
-}
+ }
 });
 
 function listTodos(){
@@ -44,23 +43,27 @@ function listTodos(){
 	todos.forEach(function(todo, i){
     printOut(i + ": " + todo);  
   });
-    canShowItems = false
 }
   else if(todos.length === 0 && canShowItems === true){
-	printOut("Your list is empty!") 
-    canShowItems = false	
+	printOut("Your list is empty!") 	
   }
+  canShowItems = false
 }
 
 function addTodo(){
     printOut("Type thing you want to add.");
 	canAddItems = true;
+	var newTodo = command
 	input.keypress(function(event){
      if(event.which === 13 && canAddItems === true){
-	  canAddItems = false
-      var newTodo = command
-	  todos.push(" " + newTodo);
-	  printOut("Item added successfully");	  
+	  if($.inArray(newTodo, forbiddenTodos) === -1){
+	    canAddItems = false
+	    todos.push(" " + newTodo);
+	    printOut("Item added successfully");	  
+	  }
+      else{
+		printOut("You can't add this to list!", "failure");
+	  }	  
 	}
   })
 }
