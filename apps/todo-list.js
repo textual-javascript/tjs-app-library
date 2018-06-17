@@ -18,9 +18,6 @@ input.keypress(function(event){
   }
   else if(command === "help"){
      viewCommands();
-  }
-  else{
-	 printOut("Invalid command. If you don't know commands, type help.");
   }	 
  }
 });
