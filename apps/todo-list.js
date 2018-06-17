@@ -2,7 +2,8 @@ var todos = [];
 var canAddItems = false;
 var canRemoveItems = false;
 var canShowItems = false;
-var canShowCommands = false
+var canShowCommands = false;
+var stopExec = false;
 var input = $("input[type='text']");
 
 printOut("Welcome to my todo-list app! If you don't know commands, type help.")
@@ -27,7 +28,7 @@ input.keypress(function(event){
   }
  
   else if(command === "close"){
-     process.exit(0);
+     showMessageAndExecute("https://textual-javascript.github.io/tjs-app-library/apps/" + "" + ".js")
   }
 }
 });
