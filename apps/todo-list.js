@@ -12,22 +12,22 @@ printOut("Welcome to my todo-list app! If you don't know commands, type help.")
 input.keypress(function(event){
  if(event.which === 13){
   
-  if(command === "list" && stopExec === false &&){
+  if(command === "list" && stopExec === false){
      listTodos();
 	 canShowItems = false
   }
 
-  else if(command === "new" && stopExec === false &&){
+  else if(command === "new" && stopExec === false){
      addTodo();
 	 canAddItems = false
   }
   
-  else if(command === "delete" && stopExec === false &&){
+  else if(command === "delete" && stopExec === false){
 	 deleteTodo();
 	 canRemoveItems = false
   }
   
-  else if(command === "help" && stopExec === false &&){
+  else if(command === "help" && stopExec === false){
      viewCommands();
 	 canShowCommands = true
   }
