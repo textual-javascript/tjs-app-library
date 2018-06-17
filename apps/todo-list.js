@@ -4,6 +4,7 @@ var canRemoveItems = false;
 var canShowItems = false;
 var canShowCommands = false;
 var stopExec = false;
+var isRunning = true;
 var input = $("input[type='text']");
 
 printOut("Welcome to my todo-list app! If you don't know commands, type help.")
@@ -11,24 +12,24 @@ printOut("Welcome to my todo-list app! If you don't know commands, type help.")
 input.keypress(function(event){
  if(event.which === 13){
   
-  if(command === "list"){
+  if(command === "list" && isRunning === true){
      listTodos();
   }
 
-  else if(command === "new"){
+  else if(command === "new" && isRunning === true){
      addTodo();
   }
   
-  else if(command === "delete"){
+  else if(command === "delete" && isRunning === true){
 	 deleteTodo();
   }
   
-  else if(command === "help"){
+  else if(command === "help" && isRunning === true){
      viewCommands();
   }
  
-  else if(command === "close"){
-     showMessageAndExecute("https://textual-javascript.github.io/tjs-app-library/apps/" + "" + ".js")
+  else if(command === "close" && isRunning === true){
+     isRunning = false;
   }
 }
 });
