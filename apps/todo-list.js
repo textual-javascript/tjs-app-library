@@ -4,7 +4,6 @@ var canRemoveItems = false;
 var canShowItems = false;
 var canShowCommands = false;
 var stopExec = false;
-var isRunning = true;
 var input = $("input[type='text']");
 
 printOut("Welcome to my todo-list app! If you don't know commands, type help.")
@@ -12,24 +11,24 @@ printOut("Welcome to my todo-list app! If you don't know commands, type help.")
 input.keypress(function(event){
  if(event.which === 13){
   
-  if(command === "list" && isRunning === true){
+  if(command === "list" && stopExec === false){
      listTodos();
   }
 
-  else if(command === "new" && isRunning === true){
+  else if(command === "new" && stopExec === false){
      addTodo();
   }
   
-  else if(command === "delete" && isRunning === true){
+  else if(command === "delete" && stopExec === false){
 	 deleteTodo();
   }
   
-  else if(command === "help" && isRunning === true){
+  else if(command === "help" && stopExec === false){
      viewCommands();
   }
  
-  else if(command === "close" && isRunning === true){
-     isRunning = false;
+  else if(command === "close" && stopExec === false){
+     stopExec = true
   }
 }
 });
