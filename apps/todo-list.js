@@ -1,4 +1,5 @@
 var todos = [];
+var forbiddenTodos = ["new", "list", "delete", "help", "close"];
 var canAddItems = false;
 var canRemoveItems = false;
 var canShowItems = false;
@@ -52,7 +53,7 @@ function addTodo(){
     printOut("Type thing you want to add.");
 	canAddItems = true;
 	input.keypress(function(event){
-     if(event.which === 13 && canAddItems === true){
+     if(event.which === 13 && canAddItems === true && $.inArray(newTodo, forbiddenTodos) == -1){
       var newTodo = command
 	  todos.push(" " + newTodo);
 	  printOut("Item added successfully");
