@@ -19,7 +19,6 @@ input.keypress(function(event){
 
   else if(command === "new" && stopExec === false){
      addTodo();
-	 canAddItems = false
   }
   
   else if(command === "delete" && stopExec === false){
@@ -58,6 +57,7 @@ function addTodo(){
 	canAddItems = true;
 	input.keypress(function(event){
      if(event.which === 13 && canAddItems === true){
+	  canAddItems = false
       var newTodo = command
 	  todos.push(" " + newTodo);
 	  printOut("Item added successfully");	  
@@ -70,10 +70,10 @@ function deleteTodo(){
 	canRemoveItems = true
 	input.keypress(function(event){
 	if(event.which === 13 && canRemoveItems == true){
+	  canRemoveItems = false
       var index = command
 	  todos.splice(index, 1)
 	  printOut("Item removed successfully");
-	  canRemoveItems = false
 	}
   })
 }
@@ -81,13 +81,13 @@ function deleteTodo(){
 function viewCommands(){
 	canShowCommands = true
 	if(canShowCommands === true){
+	  canShowCommands = false
 	  printOut("Here's a full list of commands:");
 	  printOut("new - adds new item to the list.");
 	  printOut("list - views list of things to do.");
 	  printOut("delete - deletes item from the list.");
 	  printOut("help - shows list of commands.");
-	  printOut("close - closes the application");
-      canShowCommands = false	  
+	  printOut("close - closes the application");	  
 	}
 }
 
