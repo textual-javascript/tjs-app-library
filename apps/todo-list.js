@@ -28,7 +28,7 @@ input.keypress(function(event){
   }
  
   else if(command === "close" && stopExec === false){
-     stopExec = true
+	 closeApp(); 
   }
 }
 });
@@ -85,4 +85,9 @@ function viewCommands(){
 	  printOut("close - closes the application");
       canShowCommands = false	  
 	}
+}
+
+function closeApp(){
+	 printOut("APP WAS CLOSED", "success")
+     stopExec = true
 }
