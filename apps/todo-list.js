@@ -57,15 +57,12 @@ function listTodos(){
 function addTodo(){
     printOut("Type thing you want to add.");
 	canAddItems = true;
-	var newTodo = command
 	input.keypress(function(event){
      if(event.which === 13 && canAddItems === true){
+		var newTodo = command
 	    todos.push(" " + newTodo);
 	    printOut("Item added successfully");
-	 }		
-     else{
-		printOut("You can't add this to list!", "failure");
-	 }	  
+	 }		  
 	 canAddItems = false
   })
 }
