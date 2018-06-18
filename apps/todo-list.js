@@ -23,34 +23,30 @@ input.keypress(function(event){
 })
 
 function addItem(){
-	lockCommands = true
 	printOut("Type thing, you want to add.");
 	input.keypress(function(event){
 		if(event.which === 13){
 			todos.push(command);
 			printOut("New item was added to the list.")
-			lockCommands == false;
 		}
 	})
 }
 
 function listItems(){
-   lockCommands = true
    if(todos.length !== 0){
 		todos.forEach(function(todo, index){
 		printOut("" + index + ":" + todo)
-		lockCommands = false
 	 })	
    }
    else{
 	   printOut("Your list is empty!");
-	   lockCommands = false
    }
 }
 
 function removeItem(){
-	lockCommands = true
 	printOut("What item do you want to remove (type its index)")
-	todos.splice(command, 1)
-	printOut("Item was removed from the list.")
+	input.keypress(function(event){
+	  todos.splice(command, 1)
+	  printOut("Item was removed from the list.")	
+	})
 }
