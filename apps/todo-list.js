@@ -32,10 +32,6 @@ input.keypress(function(event){
   else if(command === "close" && stopExec === false){
 	 closeApp(); 
   }
-  
-  else{
-	 printOut("Invalid command!");
-  }
  }
 });
 
