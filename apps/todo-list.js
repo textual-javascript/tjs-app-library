@@ -27,11 +27,14 @@ input.keypress(function(event){
   
   else if(command === "help" && stopExec === false){
      viewCommands();
-	 canShowCommands = true
   }
  
   else if(command === "close" && stopExec === false){
 	 closeApp(); 
+  }
+  
+  else{
+	 printOut("Invalid command!");
   }
  }
 });
@@ -47,6 +50,7 @@ function listTodos(){
   else if(todos.length === 0 && canShowItems === true){
 	printOut("Your list is empty!") 	
   }
+  printOut("Type command");
   canShowItems = false
 }
 
@@ -55,16 +59,14 @@ function addTodo(){
 	canAddItems = true;
 	var newTodo = command
 	input.keypress(function(event){
-     if(event.which === 13 && canAddItems === true){
-	  if($.inArray(newTodo, forbiddenTodos) === -1){
-	    canAddItems = false
+     if(event.which === 13 && canAddItems === true && $.inArray(newTodo, forbiddenTodos) === -1){
 	    todos.push(" " + newTodo);
-	    printOut("Item added successfully");	  
-	  }
-      else{
+	    printOut("Item added successfully");
+	 }		
+     else{
 		printOut("You can't add this to list!", "failure");
-	  }	  
-	}
+	 }	  
+	 canAddItems = false
   })
 }
  
