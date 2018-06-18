@@ -59,7 +59,7 @@ function addTodo(){
 	canAddItems = true;
 	var newTodo = command
 	input.keypress(function(event){
-     if(event.which === 13 && canAddItems === true && $.inArray(newTodo, forbiddenTodos) === -1){
+     if(event.which === 13 && canAddItems === true){
 	    todos.push(" " + newTodo);
 	    printOut("Item added successfully");
 	 }		
