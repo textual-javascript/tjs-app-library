@@ -7,19 +7,18 @@ input.keypress(function(event){
 	if(event.which === 13){
 		command = input.val();
 		if(command === "start"){
-			explainRules();
+			var printRules = setInterval(explainRules, 2000)
 		}
 	}
 })
 	
 function explainRules(){
 	var index = 0
-	var printRules = setInterval(function(){
+	var repeats = 0
 	  printOut(instructions[index]);
       index++	
 	  repeats++	
 	  if(repeats === 7){
 		  clearInterval(printRules);
 	  }
-   }, 2000)
 }
