@@ -21,5 +21,5 @@ function explainRules(){
 	  if(repeats === 7){
 		  clearInterval(printRules);
 	  }
-	})
+   }, 2000)
 }
