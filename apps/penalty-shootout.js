@@ -11,7 +11,7 @@ $("input[type='text']").keypress(function(event){
 })
 	
 function game(){
-  for(var i = 0; i < instructions.length; i++){
+  for(var i = 0; i < 7; i++){
 	  printOut(instructions[i])
   }
   if(command === "ok"){
