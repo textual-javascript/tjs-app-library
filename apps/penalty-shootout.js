@@ -7,6 +7,10 @@ $("input[type='text']").keypress(function(event){
 		if(command === "start"){
 			game()
 		}
+		else if(command === "ok" && waitForOk === true){
+	        printOut("Ok then, let's go!");
+	        waitForOk = false
+        }
 	}
 })
 	
@@ -14,9 +18,5 @@ function game(){
   for(var i = 0; i < 8; i++){
 	  printOut(instructions[i])
 	  waitForOk = true
-  }
-  if(command === "ok" && waitForOk === true){
-	  printOut("Ok then, let's go!");
-	  waitForOk = false
   }
 }
