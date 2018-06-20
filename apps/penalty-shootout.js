@@ -32,7 +32,6 @@ function printHelp(){
 function actualGame(){
    printOut("Ok then, let's go!");
    waitForOk = false
-   while(userScore < 10 || compScore < 10){
      if(isUserStriker === true){
 	   printOut("It's your time to shoot!");
 	   printOut("Pick number from 1 to 48...");
@@ -111,6 +110,5 @@ function actualGame(){
              isCompStriker = false	
 		 }
 	  })
-	}	
-  }	   
+	}	   
 }
