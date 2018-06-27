@@ -13,34 +13,15 @@ $("input[type='text']").keypress(function(event){
 		  typeNum1 = false
 		  printOut("Type second number.")
 	  }
-	  else if (typeNum1 === false){
+	  else if(typeNum1 === false){
 		  num2 = parseInt(command)
 		  doOperation = true
-		  printOut("Now, press +, -, * or / on numpad.")
+		  printOut("Now, type +, -, * or /")
 	  }
-	}
-	else if(event.which === 107){
-		if(doOperation === true){
-			result = num1 + num2
-			printOut(result.toString())
-		}
-	}
-	else if(event.which === 109){
-		if(doOperation === true){
-			result = num1 - num2
-			printOut(result.toString())
-		}
-	}
-	else if(event.which === 106){
-		if(doOperation === true){
-			result = num1 * num2
-			printOut(result.toString())
-		}
-	}
-	else if(event.which === 111){
-		if(doOperation === true){
-			result = num1 / num2
-			printOut(result.toString())
-		}
+	  else if(doOperation === true){
+		  if(command === "+"){
+			  result = num1 + num2
+		  }
+	  }
 	}
 })
