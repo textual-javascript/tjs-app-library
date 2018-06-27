@@ -23,7 +23,25 @@ $("input[type='text']").keypress(function(event){
 		  if(command === "+"){
 			  result = num1 + num2
 			  doOperation = false
-			  printOut(result.toString())
+			  printOut("The result is: " + result.toString())
+		  }
+		  else if(command === "-"){
+			  result = num1 - num2
+			  doOperation = false
+			  printOut("The result is: " + result.toString())
+		  }
+		  else if(command === "*"){
+			  result = num1 * num2
+			  doOperation = false
+			  printOut("The result is: " + result.toString())
+		  }
+		  else if(command === "/"){
+			  result = num1 / num2
+			  doOperation = false
+			  printOut("The result is: " + result.toString())
+		  }
+		  else{
+			  printOut("Invalid operation!", "failure")
 		  }
 	  }
 	}
