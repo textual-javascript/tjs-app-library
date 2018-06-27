@@ -22,18 +22,22 @@ $("input[type='text']").keypress(function(event){
 		  if(command === "+"){
 			  result = num1 + num2
 			  printOut("The result is: " + result)
+			  typeOperation = false
 		  }
 		  else if (command === "-"){
 			  result = num1 - num2
 			  printOut("The result is: " + result)
+			  typeOperation = false
 		  }
 		  else if (command === "*"){
 			  result = num1 * num2
 			  printOut("The result is: " + result)
+			  typeOperation = false
 		  }
 		  else if (command === "/"){
 			  result = num1 / num2
 			  printOut("The result is: " + result)
+			  typeOperation = false
 		  }
 		  else{
 			  printOut("Invalid sign!")
