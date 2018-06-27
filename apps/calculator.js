@@ -17,11 +17,13 @@ $("input[type='text']").keypress(function(event){
 		  num2 = parseInt(command)
 		  doOperation = true
 		  printOut("Now, type +, -, * or /")
+		  typeNum1 = 0
 	  }
 	  else if(doOperation === true){
 		  if(command === "+"){
 			  result = num1 + num2
 			  doOperation = false
+			  printOut(result.toString())
 		  }
 	  }
 	}
