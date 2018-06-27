@@ -3,7 +3,7 @@ var num2 = 0
 var result = 0
 var operation = ""
 var typeNum1 = true
-var typeOperation = false
+var doOperation = false
 
 printOut("Welcome to calculator app! Type first number.")
 $("input[type='text']").keypress(function(event){
@@ -15,27 +15,32 @@ $("input[type='text']").keypress(function(event){
 	  }
 	  else if (typeNum1 === false){
 		  num2 = parseInt(command)
-		  typeOperation = true
-		  printOut("Type operation sign (+, -, * or /)")
+		  doOperation = true
+		  printOut("Now, press +, -, * or / on numpad.")
 	  }
-	  else if(typeOperation === true){
-		  if(command == "+"){
-			  result = num1 + num2
-		  }
-		  else if (command == "-"){
-			  result = num1 - num2
-		  }
-		  else if (command == "*"){
-			  result = num1 * num2
-		  }
-		  else if (command == "/"){
-			  result = num1 / num2
-		  }
-		  else{
-			  printOut("Invalid sign!")
-		  }
-		  printOut(result)
-		  typeOperation = false
-	  }
+	}
+	else if(event.which === 107){
+		if(doOperation === true){
+			result = num1 + num2
+			printOut(result.toString())
+		}
+	}
+	else if(event.which === 109){
+		if(doOperation === true){
+			result = num1 - num2
+			printOut(result.toString())
+		}
+	}
+	else if(event.which === 106){
+		if(doOperation === true){
+			result = num1 * num2
+			printOut(result.toString())
+		}
+	}
+	else if(event.which === 111){
+		if(doOperation === true){
+			result = num1 / num2
+			printOut(result.toString())
+		}
 	}
 })
