@@ -21,6 +21,7 @@ $("input[type='text']").keypress(function(event){
 	  else if(doOperation === true){
 		  if(command === "+"){
 			  result = num1 + num2
+			  doOperation = false
 		  }
 	  }
 	}
