@@ -19,22 +19,22 @@ $("input[type='text']").keypress(function(event){
 		  printOut("Type operation sign (+, -, * or /)")
 	  }
 	  else if(typeOperation === true){
-		  if(command === "+"){
+		  if(command == "+"){
 			  result = num1 + num2
 		  }
-		  else if (command === "-"){
+		  else if (command == "-"){
 			  result = num1 - num2
 		  }
-		  else if (command === "*"){
+		  else if (command == "*"){
 			  result = num1 * num2
 		  }
-		  else if (command === "/"){
+		  else if (command == "/"){
 			  result = num1 / num2
 		  }
 		  else{
 			  printOut("Invalid sign!")
 		  }
-		  printOut("The result is: " + result)
+		  printOut(result)
 		  typeOperation = false
 	  }
 	}
