@@ -21,23 +21,20 @@ $("input[type='text']").keypress(function(event){
 	  else if(typeOperation === true){
 		  if(command === "+"){
 			  result = num1 + num2
-			  printOut("The result is: " + result)
 		  }
 		  else if (command === "-"){
 			  result = num1 - num2
-			  printOut("The result is: " + result)
 		  }
 		  else if (command === "*"){
 			  result = num1 * num2
-			  printOut("The result is: " + result)
 		  }
 		  else if (command === "/"){
 			  result = num1 / num2
-			  printOut("The result is: " + result)
 		  }
 		  else{
 			  printOut("Invalid sign!")
 		  }
+		  printOut("The result is: " + result)
 		  typeOperation = false
 	  }
 	}
