@@ -28,7 +28,7 @@ $("input[type='text']").keypress(function(event){
   
   function isInputLetterInCharSet(){
 	 if(canTypeLetter === true && charSet.includes(command)){
-		myShips[index].pos = pos + command.toUpperCase()
+		myShips[index].pos = myShips[index].pos + command.toUpperCase()
 		index++
 		if(index > 4){
 			canTypeLetter = false
