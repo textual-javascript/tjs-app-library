@@ -10,8 +10,7 @@ $("input[type='text']").keypress(function(event){
 	 if(command === "start"){
 		explainRules();
 		$("input[type='text']").attr("maxlength", "1")
-        printOut("Ok, now type 1 letter. You'll do it five times.")
-        canTypeLetter = true		
+        printOut("Ok, now type 1 letter. You'll do it five times.")	
 	 }
 	 isInputLetterInCharSet();
    }
@@ -27,14 +26,13 @@ $("input[type='text']").keypress(function(event){
   }
   
   function isInputLetterInCharSet(){
+	 canTypeLetter = true	
 	 if(canTypeLetter === true && charSet.includes(command)){
 		myShips[index].pos = myShips[index].pos + command.toUpperCase()
 		index++
 		if(index > 4){
+			printOut("Alright, now type 1 number, 5 times each.")
 			canTypeLetter = false
 		}
-	 }
-	 else{
-		 printOut("This input is not a letter, or it is not in the specific character set (from A to I)", "failure")
 	 }
   }
