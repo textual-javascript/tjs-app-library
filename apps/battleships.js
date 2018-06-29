@@ -10,7 +10,8 @@ $("input[type='text']").keypress(function(event){
 		$("input[type='text']").attr("maxlength", "1")
         printOut("Ok, now type 1 letter")		
 	 }
-  })
+  }
+ })
   
   function explainRules(){
 	  printOut("And as usual, I'll explain game's rules.")
