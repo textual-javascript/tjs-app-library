@@ -4,7 +4,7 @@ var charSet = "ABCDEFGHIJ"
 
 printOut("Welcome to battleships text game! Type start, to play...")
 $("input[type='text']").keypress(function(event){
-  if(event.which === 13 &&){
+  if(event.which === 13){
 	 if(command === "start"){
 		explainRules();
 		$("input[type='text']").attr("maxlength", "1")
