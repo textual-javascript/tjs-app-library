@@ -24,7 +24,7 @@ $("input[type='text']").keypress(function(event){
         canSetCordinates = true		
 	 }
 	 if(canSetCordinates === true){
-   
+        verifyCordinate();
 	 }
    }
  })
@@ -46,8 +46,12 @@ function verifyCordinate(){
 		 for(var i = 0; i < myShips.length; i++){
 			 if(myShips[i].pos === cordinate){
 				cordinate = charset[randomNum(0, 8)] + randomNum(1, 9).toString()
+				printOut(cordinate);
 			 }
 		 }
-         printOut("Alright, we're good to go now!")		 
+		 $( "li" ).last().toggleClass("success");
+         if(myShips[4].pos !== ""){
+			 printOut("Alright, we're good to go now!")	
+		 }		 
 	  }
 }
