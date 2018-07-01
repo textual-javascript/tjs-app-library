@@ -20,7 +20,7 @@ $("input[type='text']").keypress(function(event){
         printOut("If you type the same cordinate twice...")	
         printOut("For e.g. you type A1, and type A1 again, the second A1 will be replaced by randomly chosen other cordinate...")
         printOut("Unless all cordinates are unique.")
-        printOut("The same thing happens, if you type invalid   cordinate format, like 4D")		
+        printOut("The same thing happens, if you type invalid cordinate format, like 4D")		
         canSetCordinates = true		
 	 }
 	 if(canSetCordinates === true){
@@ -47,6 +47,7 @@ function verifyCordinate(){
 			 if(myShips[i].pos === cordinate){
 				cordinate = charset[randomNum(0, 8)] + randomNum(1, 9).toString()
 			 }
-		 } 
+		 }
+         printOut("Alright, we're good to go now!")		 
 	  }
 }
