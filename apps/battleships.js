@@ -21,7 +21,8 @@ $("input[type='text']").keypress(function(event){
         printOut("For e.g. you type A1, and type A1 again, the second A1 will be replaced by randomly chosen other cordinate...")
         printOut("Unless all cordinates are unique.")
         printOut("The same thing happens, if you type invalid cordinate format, like 4D")		
-        canSetCordinates = true		
+        canSetCordinates = true	
+        index = 0		
 	 }
 	 if(canSetCordinates === true){
         verifyCordinate();
@@ -49,9 +50,12 @@ function verifyCordinate(){
 				printOut(cordinate);
 			 }
 		 }
+		 myShips[index].pos = cordinate
 		 $( "li" ).last().toggleClass("success");
+		 index++
          if(myShips[4].pos !== ""){
-			 printOut("Alright, we're good to go now!")	
+			 printOut("Alright, we're good to go now!")
+			 canSetCordinates = false
 		 }		 
 	  }
 }
